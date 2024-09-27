@@ -1,0 +1,11 @@
+form {
+  max-width: 350px;
+  background-color: azure;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: auto;
+}

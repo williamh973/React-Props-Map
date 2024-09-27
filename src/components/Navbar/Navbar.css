@@ -1,0 +1,14 @@
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: Georgia;
+}
+
+.activeLink {
+    color: red;
+}
