@@ -1,0 +1,18 @@
+main {
+  max-width: auto;
+  min-width: auto;
+  height: auto;
+  display: flex;
+  border-radius: 15px;
+  background-color: aliceblue;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+p {
+  margin: 0;
+  padding: 0;
+}

@@ -1,4 +1,4 @@
-import { Message } from "./Message.interface";
+import { Message } from "../../components/Message/Message.component";
 
 export interface PropContact {
   handleSubmitMessage: (message: Message) => void;

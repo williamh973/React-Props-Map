@@ -1,13 +1,8 @@
-import { ContactForm } from "../../components/form/form.component";
+import { ContactForm } from "../../components/Forms/ContactForm/form.component";
 import { PropContact } from "../../services/interfaces/Contact.interface";
-import "./Contact.css";
+import "./ContactPage.css";
 
 export default function ContactPage(props: PropContact) {
-  /* type message = {
-        title: string,
-        category: string,
-        message: string,
-    } */
   const { handleSubmitMessage, firstname, city } = props;
 
   return (

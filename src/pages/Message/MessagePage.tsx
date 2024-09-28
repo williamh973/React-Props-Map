@@ -4,26 +4,24 @@ import {
   PropMessageList,
 } from "../../components/Message/Message.component";
 
-export default function MessagePage(propsMessageList: PropMessageList) {
-  const { messageList } = propsMessageList;
+import "./MessagePage.css";
+
+export default function MessagePage(messageList: PropMessageList) {
+  const { messages } = messageList;
 
   return (
     <>
       <h1> Message Page</h1>
 
       <p> Ceci est la page des messages</p>
-      {messageList.map((message: Message, index: number) => (
+      {messages.map((message: Message, index: number) => (
         <div key={index}>
-          <ul>
-            <li>
-              <MessageComponent
-                key={index}
-                title={message.title}
-                category={message.category}
-                message={message.message}
-              />
-            </li>
-          </ul>
+          <MessageComponent
+            key={index}
+            title={message.title}
+            category={message.category}
+            message={message.message}
+          />
         </div>
       ))}
     </>

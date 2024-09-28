@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { PropContact } from "../../services/interfaces/Contact.interface";
-import { Button } from "../ui/button/Button";
+import { PropContact } from "../../../services/interfaces/Contact.interface";
+import { Button } from "../../ui/button/Button";
 import "./form.component.css";
-import { Message } from "../Message/Message.component";
+import { Message } from "../../Message/Message.component";
 
 export function ContactForm({ handleSubmitMessage }: PropContact) {
   const [form, setForm] = useState<Message>({
@@ -12,23 +12,13 @@ export function ContactForm({ handleSubmitMessage }: PropContact) {
   });
 
   function handleChange(evt: any) {
-    // let name = evt.target.name;
-    // let value = evt.target.value;
-
-    // Destructuring
     const { name, value } = evt.target;
     setForm({ ...form, [name]: value });
   }
 
   function handleSubmit(evt: any) {
     evt.preventDefault();
-    console.log("HandleSubmit");
-    console.log(form);
-
-    //setForm({...form, title : 'Salut'})
-    //setArticle('Salut')
     handleSubmitMessage(form);
-    console.log(form);
   }
 
   return (

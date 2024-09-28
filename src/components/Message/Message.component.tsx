@@ -1,3 +1,5 @@
+import "./Message.component.css";
+
 export interface Message {
   title: string;
   category: string;
@@ -5,15 +7,19 @@ export interface Message {
 }
 
 export interface PropMessageList {
-  messageList: Message[];
+  messages: Message[];
 }
 
 export function MessageComponent({ title, category, message }: Message) {
   return (
-    <>
-      <h2>{title}</h2>
-      <h2>{category}</h2>
-      <h2>{message}</h2>
-    </>
+    <main>
+      <ul>
+        <li>
+          <p>{title}</p>
+          <p>{category}</p>
+          <p>{message}</p>
+        </li>
+      </ul>
+    </main>
   );
 }

@@ -4,15 +4,15 @@ import Navbar from "./components/Navbar/Navbar.component";
 import HomePage from "./pages/Home/HomePage";
 import ContactPage from "./pages/Contact/ContactPage";
 import MessagePage from "./pages/Message/MessagePage";
-import { Message } from "./services/interfaces/Message.interface";
 import { useState } from "react";
-import MessageDetailPage from "./pages/Message/MessageDetailPage";
 import NotFoundPage from "./services/utils/NotFoundPage.utils";
+import { Message } from "./components/Message/Message.component";
+import { AuthorPage } from "./pages/Author/AuthorPage";
 
 function App() {
   const [messages, setMessages] = useState<Message[]>([]);
 
-  function handleSubmitMessage(message: Message): void {
+  function getDataFromFormComponent(message: Message): void {
     setMessages([...messages, message]);
   }
 
@@ -28,7 +28,7 @@ function App() {
             path="/contact"
             element={
               <ContactPage
-                handleSubmitMessage={handleSubmitMessage}
+                handleSubmitMessage={getDataFromFormComponent}
                 firstname="Leon"
                 city="Paris"
               />
@@ -38,12 +38,8 @@ function App() {
             path="/message"
             element={<MessagePage messages={messages} />}
           />
-          <Route
-            path="/message/:idMessage/:idPage"
-            element={<MessageDetailPage />}
-          />
         </Route>
-
+        <Route path="/author" element={<AuthorPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
