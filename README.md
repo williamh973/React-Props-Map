@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+First React TP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1 : Dans la page de Contact : Transformer le formulaire en un composant
 
-Currently, two official plugins are available:
+2 : Dans la page Message : Transformer le bloc dans le map en un composant
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3 : Ajouter 1 page supplémentaire ( Auteur ).
+Cette page sera un formulaire dans lequel nous pourrons ajouter des auteurs.
+Le formulaire sera composé de 2 champs firstname et lastname.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+4 : Ajouter un champ “auteur” (une liste déroulante) dans le formulaire de la page Contact.
+La liste des auteurs doit être alimenté par l’ajout que l’on ferait dans la page Auteur
