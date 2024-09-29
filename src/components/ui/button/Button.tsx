@@ -1,14 +1,9 @@
+import { PropButton } from "../../../services/interfaces/Button.interface";
 import "./Button.css";
 
-interface ButtonShared {
-  label: string;
-  type: "submit" | "button" | "reset" | undefined;
-  onClick: () => void;
-}
-
-export const Button = ({ label, type, onClick }: ButtonShared) => {
+export const Button = ({ label, type, onClick, id }: PropButton) => {
   return (
-    <button className="button-29" onClick={onClick} type={type}>
+    <button className="button-29" type={type} onClick={onClick} id={id}>
       {label}
     </button>
   );

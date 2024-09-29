@@ -1,9 +1,14 @@
 import { useState } from "react";
 import "./AuthorForm.component.css";
 import { Button } from "../../ui/button/Button";
+import {
+  PropAuthor,
+  PropGetAuthor,
+} from "../../../services/interfaces/Author.interface";
+import { Input } from "../../ui/form/Input";
 
-export function AuthorForm() {
-  const [author, setAuthor] = useState({
+export function AuthorForm({ handleSubmitAuthor }: PropGetAuthor) {
+  const [author, setAuthor] = useState<PropAuthor>({
     firstname: "",
     lastname: "",
   });
@@ -15,19 +20,21 @@ export function AuthorForm() {
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    console.log("Auteur : ", author);
+    handleSubmitAuthor(author);
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
+          id="authorForm-firstnameInput"
           type="text"
           name="firstname"
           placeholder="Entrer le Nom"
           onChange={handleChange}
         />
-        <input
+        <Input
+          id="authorForm-lastnameInput"
           type="text"
           name="lastname"
           placeholder="Entrer le Prénom"

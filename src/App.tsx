@@ -6,14 +6,21 @@ import ContactPage from "./pages/Contact/ContactPage";
 import MessagePage from "./pages/Message/MessagePage";
 import { useState } from "react";
 import NotFoundPage from "./services/utils/NotFoundPage.utils";
-import { Message } from "./components/Message/Message.component";
+
 import { AuthorPage } from "./pages/Author/AuthorPage";
+import { PropAuthor } from "./services/interfaces/Author.interface";
+import { PropMessage } from "./services/interfaces/Message.interface";
 
 function App() {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<PropMessage[]>([]);
+  const [authors, setAuthors] = useState<PropAuthor[]>([]);
 
-  function getDataFromFormComponent(message: Message): void {
+  function getDataFromContactFormComponent(message: PropMessage): void {
     setMessages([...messages, message]);
+  }
+
+  function getDataFromAuthorFormComponent(author: PropAuthor): void {
+    setAuthors([...authors, author]);
   }
 
   return (
@@ -28,10 +35,15 @@ function App() {
             path="/contact"
             element={
               <ContactPage
-                handleSubmitMessage={getDataFromFormComponent}
-                firstname="Leon"
-                city="Paris"
+                handleSubmitMessage={getDataFromContactFormComponent}
+                authorList={authors}
               />
+            }
+          />
+          <Route
+            path="/author"
+            element={
+              <AuthorPage handleSubmitAuthor={getDataFromAuthorFormComponent} />
             }
           />
           <Route
@@ -39,7 +51,6 @@ function App() {
             element={<MessagePage messages={messages} />}
           />
         </Route>
-        <Route path="/author" element={<AuthorPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

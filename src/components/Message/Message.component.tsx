@@ -1,23 +1,14 @@
+import { PropMessage } from "../../services/interfaces/Message.interface";
 import "./Message.component.css";
 
-export interface Message {
-  title: string;
-  category: string;
-  message: string;
-}
-
-export interface PropMessageList {
-  messages: Message[];
-}
-
-export function MessageComponent({ title, category, message }: Message) {
+export function MessageComponent({ title, category, message }: PropMessage) {
   return (
     <main>
       <ul>
         <li>
-          <p>{title}</p>
-          <p>{category}</p>
-          <p>{message}</p>
+          <span>Titre : {title}</span>
+          <span>Catégorie : {category}</span>
+          <span>Message : {message}</span>
         </li>
       </ul>
     </main>

@@ -1,9 +1,8 @@
+import { MessageComponent } from "../../components/Message/Message.component";
 import {
-  Message,
-  MessageComponent,
+  PropMessage,
   PropMessageList,
-} from "../../components/Message/Message.component";
-
+} from "../../services/interfaces/Message.interface";
 import "./MessagePage.css";
 
 export default function MessagePage(messageList: PropMessageList) {
@@ -11,10 +10,11 @@ export default function MessagePage(messageList: PropMessageList) {
 
   return (
     <>
-      <h1> Message Page</h1>
+      <h1>Message Page</h1>
 
-      <p> Ceci est la page des messages</p>
-      {messages.map((message: Message, index: number) => (
+      <p>Message reçu : ({messages.length})</p>
+
+      {messages.map((message: PropMessage, index: number) => (
         <div key={index}>
           <MessageComponent
             key={index}
